@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/gadomski/quick-five/compare/quick-five-v1.0.0...quick-five-v1.0.1) (2026-01-24)
+
+
+### Bug Fixes
+
+* icon ([3379aa3](https://github.com/gadomski/quick-five/commit/3379aa336dc910c88daff549f375cbd73b891f3e))
+
 ## 1.0.0 (2026-01-24)
 
 
