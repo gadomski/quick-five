@@ -26,7 +26,7 @@ export function GameHeader({ onReset }: GameHeaderProps) {
     <>
       <Flex justify="space-between" align="center">
         <Flex align="center" gap={3}>
-          <Image src="/icon-192.png" alt="Quick Five" boxSize="40px" />
+          <Image src="icon-192.png" alt="Quick Five" boxSize="40px" />
           <Heading size="xl">Quick Five</Heading>
         </Flex>
         <Flex gap={2}>
