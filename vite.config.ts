@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/quick-five/",
+  base: process.env.GITHUB_ACTIONS ? "/quick-five/" : "./",
 });

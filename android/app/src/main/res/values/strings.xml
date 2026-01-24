@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Quick Five</string>
+    <string name="title_activity_main">Quick Five</string>
+    <string name="package_name">ski.gadom.quickfive</string>
+    <string name="custom_url_scheme">ski.gadom.quickfive</string>
+</resources>
