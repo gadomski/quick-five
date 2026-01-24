@@ -1,5 +1,6 @@
 import { useReducer, useEffect } from "react";
 import { Container, VStack, Text } from "@chakra-ui/react";
+import { Capacitor } from "@capacitor/core";
 import { GameState, GameAction, Player, ScoreEntry } from "./types/game";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { GameHeader } from "./components/GameHeader";
@@ -133,8 +134,14 @@ function App() {
     dispatch({ type: "RESET_GAME" });
   };
 
+  const isAndroid = Capacitor.getPlatform() === "android";
+
   return (
-    <Container maxW="container.md" py={4}>
+    <Container
+      maxW="container.md"
+      py={4}
+      pt={isAndroid ? "48px" : 4}
+    >
       <VStack gap={4} align="stretch">
         <GameHeader onReset={handleResetGame} />
         <PlayerList

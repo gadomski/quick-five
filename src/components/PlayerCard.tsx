@@ -11,6 +11,7 @@ import { FiList, FiX } from "react-icons/fi";
 import { Player } from "../types/game";
 import { AddScoreInput } from "./AddScoreInput";
 import { ScoreHistoryDrawer } from "./ScoreHistoryDrawer";
+import { ConfirmDialog } from "./ConfirmDialog";
 
 interface PlayerCardProps {
   player: Player;
@@ -30,6 +31,11 @@ export function PlayerCard({
   const [isEditingName, setIsEditingName] = useState(false);
   const [editedName, setEditedName] = useState(player.name);
   const { open, onOpen, onClose } = useDisclosure();
+  const {
+    open: confirmOpen,
+    onOpen: onConfirmOpen,
+    onClose: onConfirmClose,
+  } = useDisclosure();
 
   const handleNameSubmit = () => {
     if (editedName.trim()) {
@@ -89,7 +95,7 @@ export function PlayerCard({
               size="sm"
               variant="ghost"
               colorPalette="red"
-              onClick={onRemove}
+              onClick={onConfirmOpen}
             >
               <FiX />
             </IconButton>
@@ -109,6 +115,15 @@ export function PlayerCard({
         playerName={player.name}
         history={player.history}
         onUndo={onUndoScore}
+      />
+
+      <ConfirmDialog
+        isOpen={confirmOpen}
+        onClose={onConfirmClose}
+        onConfirm={onRemove}
+        title="Remove Player"
+        message={`Are you sure you want to remove ${player.name}?`}
+        confirmText="Remove"
       />
     </>
   );
