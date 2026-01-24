@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from "react";
-import { Container, VStack } from "@chakra-ui/react";
+import { Container, VStack, Text } from "@chakra-ui/react";
 import { GameState, GameAction, Player, ScoreEntry } from "./types/game";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { GameHeader } from "./components/GameHeader";
@@ -145,6 +145,9 @@ function App() {
           onUndoScore={handleUndoScore}
         />
         <AddPlayerButton onAdd={handleAddPlayer} />
+        <Text fontSize="xs" color="fg.muted" textAlign="center" mt={8}>
+          Stealing Luke's job since 2026
+        </Text>
       </VStack>
     </Container>
   );

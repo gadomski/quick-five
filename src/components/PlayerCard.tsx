@@ -7,6 +7,7 @@ import {
   IconButton,
   useDisclosure,
 } from "@chakra-ui/react";
+import { FiList, FiX } from "react-icons/fi";
 import { Player } from "../types/game";
 import { AddScoreInput } from "./AddScoreInput";
 import { ScoreHistoryDrawer } from "./ScoreHistoryDrawer";
@@ -81,7 +82,7 @@ export function PlayerCard({
               variant="ghost"
               onClick={onOpen}
             >
-              <Text>📜</Text>
+              <FiList />
             </IconButton>
             <IconButton
               aria-label="Remove player"
@@ -90,7 +91,7 @@ export function PlayerCard({
               colorPalette="red"
               onClick={onRemove}
             >
-              <Text>×</Text>
+              <FiX />
             </IconButton>
           </Flex>
         </Flex>

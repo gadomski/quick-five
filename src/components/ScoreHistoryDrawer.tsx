@@ -7,6 +7,7 @@ import {
   CloseButton,
   Drawer,
 } from "@chakra-ui/react";
+import { FiRotateCcw } from "react-icons/fi";
 import { ScoreEntry } from "../types/game";
 
 interface ScoreHistoryDrawerProps {
@@ -85,7 +86,7 @@ export function ScoreHistoryDrawer({
                       colorPalette="red"
                       onClick={() => onUndo(entry.id)}
                     >
-                      <Text>↩</Text>
+                      <FiRotateCcw />
                     </IconButton>
                   </Flex>
                 ))}
