@@ -1,0 +1,22 @@
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Check format
+        run: yarn format:check
+      - name: Lint
+        run: yarn lint
+      - name: Build
+        run: yarn build
