@@ -137,11 +137,7 @@ function App() {
   const isAndroid = Capacitor.getPlatform() === "android";
 
   return (
-    <Container
-      maxW="container.md"
-      py={4}
-      pt={isAndroid ? "48px" : 4}
-    >
+    <Container maxW="container.md" py={4} pt={isAndroid ? "48px" : 4}>
       <VStack gap={4} align="stretch">
         <GameHeader onReset={handleResetGame} />
         <PlayerList
