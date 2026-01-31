@@ -11,6 +11,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
+    "lint": "tsc --noEmit",
     "cap:sync": "yarn build && npx cap sync android",
     "cap:open": "npx cap open android",
     "cap:run": "npx cap run android"
