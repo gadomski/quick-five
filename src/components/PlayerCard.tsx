@@ -12,22 +12,13 @@ import { Player } from "../types/game";
 import { AddScoreInput } from "./AddScoreInput";
 import { ScoreHistoryDrawer } from "./ScoreHistoryDrawer";
 import { ConfirmDialog } from "./ConfirmDialog";
+import { useGameStore } from "../store/gameStore";
 
 interface PlayerCardProps {
   player: Player;
-  onAddScore: (amount: number) => void;
-  onRemove: () => void;
-  onUpdateName: (name: string) => void;
-  onUndoScore: (scoreId: string) => void;
 }
 
-export function PlayerCard({
-  player,
-  onAddScore,
-  onRemove,
-  onUpdateName,
-  onUndoScore,
-}: PlayerCardProps) {
+export function PlayerCard({ player }: PlayerCardProps) {
   const [isEditingName, setIsEditingName] = useState(false);
   const [editedName, setEditedName] = useState(player.name);
   const { open, onOpen, onClose } = useDisclosure();
@@ -37,9 +28,14 @@ export function PlayerCard({
     onClose: onConfirmClose,
   } = useDisclosure();
 
+  const removePlayer = useGameStore((state) => state.removePlayer);
+  const updatePlayerName = useGameStore((state) => state.updatePlayerName);
+  const addScore = useGameStore((state) => state.addScore);
+  const removeScore = useGameStore((state) => state.removeScore);
+
   const handleNameSubmit = () => {
     if (editedName.trim()) {
-      onUpdateName(editedName.trim());
+      updatePlayerName(player.id, editedName.trim());
     } else {
       setEditedName(player.name);
     }
@@ -106,7 +102,7 @@ export function PlayerCard({
           Total: {player.totalScore}
         </Text>
 
-        <AddScoreInput onSubmit={onAddScore} />
+        <AddScoreInput onSubmit={(amount) => addScore(player.id, amount)} />
       </Box>
 
       <ScoreHistoryDrawer
@@ -114,13 +110,13 @@ export function PlayerCard({
         onClose={onClose}
         playerName={player.name}
         history={player.history}
-        onUndo={onUndoScore}
+        onUndo={(scoreId) => removeScore(player.id, scoreId)}
       />
 
       <ConfirmDialog
         isOpen={confirmOpen}
         onClose={onConfirmClose}
-        onConfirm={onRemove}
+        onConfirm={() => removePlayer(player.id)}
         title="Remove Player"
         message={`Are you sure you want to remove ${player.name}?`}
         confirmText="Remove"
