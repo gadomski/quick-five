@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/gadomski/quick-five/compare/v1.1.4...v1.1.5) (2026-02-07)
+
+
+### Bug Fixes
+
+* seperate pointer and mouse sensors ([b190583](https://github.com/gadomski/quick-five/commit/b190583c4f278d9317325831acaff8ec03fc2d4e))
+
 ## [1.1.4](https://github.com/gadomski/quick-five/compare/v1.1.3...v1.1.4) (2026-02-07)
 
 
