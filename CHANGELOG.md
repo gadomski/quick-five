@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/gadomski/quick-five/compare/v1.1.2...v1.1.3) (2026-02-07)
+
+
+### Bug Fixes
+
+* use touch-action: manipulation ([54a009d](https://github.com/gadomski/quick-five/commit/54a009d208f32784fc3975e9f83efe812b609d56))
+
 ## [1.1.2](https://github.com/gadomski/quick-five/compare/v1.1.1...v1.1.2) (2026-02-07)
 
 
