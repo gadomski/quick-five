@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { arrayMove } from "@dnd-kit/sortable";
 import { Player, ScoreEntry } from "../types/game";
 
 function generateId(): string {
@@ -30,6 +31,7 @@ interface GameStore {
   updatePlayerName: (playerId: string, name: string) => void;
   addScore: (playerId: string, amount: number) => void;
   removeScore: (playerId: string, scoreId: string) => void;
+  reorderPlayers: (activeId: string, overId: string) => void;
   resetGame: () => void;
 }
 
@@ -81,6 +83,13 @@ export const useGameStore = create<GameStore>()(
             };
           }),
         })),
+
+      reorderPlayers: (activeId, overId) =>
+        set((state) => {
+          const oldIndex = state.players.findIndex((p) => p.id === activeId);
+          const newIndex = state.players.findIndex((p) => p.id === overId);
+          return { players: arrayMove(state.players, oldIndex, newIndex) };
+        }),
 
       resetGame: () =>
         set({

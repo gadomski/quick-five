@@ -1,7 +1,8 @@
-import { Container, VStack, Text } from "@chakra-ui/react";
+import { Container, VStack } from "@chakra-ui/react";
 import Header from "./components/Header";
 import { PlayerList } from "./components/PlayerList";
 import { AddPlayerButton } from "./components/AddPlayerButton";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -10,9 +11,7 @@ function App() {
         <Header />
         <PlayerList />
         <AddPlayerButton />
-        <Text fontSize="xs" color="fg.muted" textAlign="center">
-          Stealing Luke's job since 2026
-        </Text>
+        <Footer />
       </VStack>
     </Container>
   );
