@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/gadomski/quick-five/compare/v1.1.5...v1.2.0) (2026-02-07)
+
+
+### Features
+
+* add changelog ([#42](https://github.com/gadomski/quick-five/issues/42)) ([8fe117b](https://github.com/gadomski/quick-five/commit/8fe117bc24f366f716fae1f11354c1800ca054aa))
+* add leaderboard ([#40](https://github.com/gadomski/quick-five/issues/40)) ([e4cbc1b](https://github.com/gadomski/quick-five/commit/e4cbc1b2810441fb493cd649064475729b23a6c0)), closes [#10](https://github.com/gadomski/quick-five/issues/10)
+* make it a progressive web app ([#38](https://github.com/gadomski/quick-five/issues/38)) ([b5b2c15](https://github.com/gadomski/quick-five/commit/b5b2c15d287aa7b42890f2b62d1d374de2ce624b))
+
+
+### Bug Fixes
+
+* respect color mode preference ([#41](https://github.com/gadomski/quick-five/issues/41)) ([7bf3d9a](https://github.com/gadomski/quick-five/commit/7bf3d9a36c7b913719f9e84324c1075501d4a1cb)), closes [#37](https://github.com/gadomski/quick-five/issues/37)
+
 ## [1.1.5](https://github.com/gadomski/quick-five/compare/v1.1.4...v1.1.5) (2026-02-07)
 
 
