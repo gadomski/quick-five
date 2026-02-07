@@ -29,7 +29,7 @@ interface GameStore {
   removePlayer: (playerId: string) => void;
   updatePlayerName: (playerId: string, name: string) => void;
   addScore: (playerId: string, amount: number) => void;
-  undoScore: (playerId: string, scoreId: string) => void;
+  removeScore: (playerId: string, scoreId: string) => void;
   resetGame: () => void;
 }
 
@@ -68,7 +68,7 @@ export const useGameStore = create<GameStore>()(
           ),
         })),
 
-      undoScore: (playerId, scoreId) =>
+      removeScore: (playerId, scoreId) =>
         set((state) => ({
           players: state.players.map((p) => {
             if (p.id !== playerId) return p;

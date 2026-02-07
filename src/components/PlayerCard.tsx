@@ -31,7 +31,7 @@ export function PlayerCard({ player }: PlayerCardProps) {
   const removePlayer = useGameStore((state) => state.removePlayer);
   const updatePlayerName = useGameStore((state) => state.updatePlayerName);
   const addScore = useGameStore((state) => state.addScore);
-  const undoScore = useGameStore((state) => state.undoScore);
+  const removeScore = useGameStore((state) => state.removeScore);
 
   const handleNameSubmit = () => {
     if (editedName.trim()) {
@@ -110,7 +110,7 @@ export function PlayerCard({ player }: PlayerCardProps) {
         onClose={onClose}
         playerName={player.name}
         history={player.history}
-        onUndo={(scoreId) => undoScore(player.id, scoreId)}
+        onUndo={(scoreId) => removeScore(player.id, scoreId)}
       />
 
       <ConfirmDialog
