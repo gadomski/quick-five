@@ -1,5 +1,4 @@
 import {
-  Flex,
   Heading,
   Button,
   Image,
@@ -10,14 +9,12 @@ import {
 import { useTheme } from "next-themes";
 import { LuMoon, LuSun } from "react-icons/lu";
 import { ConfirmDialog } from "./ConfirmDialog";
+import { useGameStore } from "../store/gameStore";
 
-interface GameHeaderProps {
-  onReset: () => void;
-}
-
-export function GameHeader({ onReset }: GameHeaderProps) {
+export function GameHeader() {
   const { theme, setTheme } = useTheme();
   const { open, onOpen, onClose } = useDisclosure();
+  const resetGame = useGameStore((state) => state.resetGame);
 
   const toggleColorMode = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -48,7 +45,7 @@ export function GameHeader({ onReset }: GameHeaderProps) {
       <ConfirmDialog
         isOpen={open}
         onClose={onClose}
-        onConfirm={onReset}
+        onConfirm={resetGame}
         title="New game"
         message="Are you sure you want to start a new game? All scores will be lost."
         confirmText="Start new name"
