@@ -12,15 +12,9 @@
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
-    "lint": "tsc --noEmit",
-    "cap:sync": "yarn build && npx cap sync android",
-    "cap:open": "npx cap open android",
-    "cap:run": "npx cap run android"
+    "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@capacitor/android": "^8.0.1",
-    "@capacitor/core": "^8.0.1",
-    "@capacitor/status-bar": "^8.0.0",
     "@chakra-ui/react": "^3.3.3",
     "@emotion/react": "^11.14.0",
     "next-themes": "^0.4.6",
