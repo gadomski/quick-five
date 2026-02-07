@@ -18,7 +18,7 @@
     "cap:run": "npx cap run android"
   },
   "dependencies": {
-    "@capacitor/android": "^8.0.1",
+    "@capacitor/android": "^8.0.2",
     "@capacitor/core": "^8.0.1",
     "@capacitor/status-bar": "^8.0.0",
     "@chakra-ui/react": "^3.3.3",

@@ -235,10 +235,10 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.28.5"
 
-"@capacitor/android@^8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-8.0.1.tgz#7181cd8bfd80f38a9a6bb803655440c3dcfa095e"
-  integrity sha512-Mrk2MFKSg9YA4BPLKm03wwFnGKcvzNBERUTcxjW1NkLrF6YhJwygAT69f/YGopFvOhhqdnDPsuZuASUfmpkSpw==
+"@capacitor/android@^8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-8.0.2.tgz#874eccbc24db2bb6036838d8853760d964568508"
+  integrity sha512-0D7j0YvzjnfCMKLvFkAbx8b3Vwx+QfHFG5NzoXpI9sAl3zWiLsfa+NX4x92Fy+k4MGjLSMAfLThCqILYGDDsgw==
 
 "@capacitor/assets@^3.0.5":
   version "3.0.5"
