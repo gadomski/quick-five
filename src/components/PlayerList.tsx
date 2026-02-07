@@ -24,6 +24,7 @@ function SortablePlayerCard({ player }: { player: Player }) {
 
   const style = {
     transform: CSS.Transform.toString(transform),
+    "touch-action": "manipulation",
     transition,
   };
 
