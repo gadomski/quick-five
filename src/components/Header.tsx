@@ -11,7 +11,7 @@ import { LuMoon, LuSun } from "react-icons/lu";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { useGameStore } from "../store/gameStore";
 
-export function GameHeader() {
+export default function GameHeader() {
   const { theme, setTheme } = useTheme();
   const { open, onOpen, onClose } = useDisclosure();
   const resetGame = useGameStore((state) => state.resetGame);

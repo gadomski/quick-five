@@ -1,14 +1,14 @@
 import { Container, VStack } from "@chakra-ui/react";
-import { GameHeader } from "./components/GameHeader";
+import Header from "./components/Header";
 import { PlayerList } from "./components/PlayerList";
 import { AddPlayerButton } from "./components/AddPlayerButton";
 import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Container maxW="container.md" py={4} pt={4}>
+    <Container maxW="md" py={4}>
       <VStack gap={4} align="stretch">
-        <GameHeader />
+        <Header />
         <PlayerList />
         <AddPlayerButton />
         <Footer />
