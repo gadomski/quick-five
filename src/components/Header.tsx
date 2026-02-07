@@ -2,23 +2,16 @@ import {
   Heading,
   Button,
   Image,
-  IconButton,
   useDisclosure,
   HStack,
 } from "@chakra-ui/react";
-import { useTheme } from "next-themes";
-import { LuMoon, LuSun } from "react-icons/lu";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { useGameStore } from "../store/gameStore";
+import { ColorModeButton } from "./ui/color-mode";
 
 export default function GameHeader() {
-  const { theme, setTheme } = useTheme();
   const { open, onOpen, onClose } = useDisclosure();
   const resetGame = useGameStore((state) => state.resetGame);
-
-  const toggleColorMode = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   return (
     <>
@@ -28,14 +21,7 @@ export default function GameHeader() {
           <Heading size="xl">Quick Five</Heading>
         </HStack>
         <HStack gap={2}>
-          <IconButton
-            aria-label="Toggle color mode"
-            variant="ghost"
-            size="sm"
-            onClick={toggleColorMode}
-          >
-            {theme === "dark" ? <LuSun /> : <LuMoon />}
-          </IconButton>
+          <ColorModeButton />
           <Button size="sm" variant="outline" onClick={onOpen}>
             New game
           </Button>
