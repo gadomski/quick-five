@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/gadomski/quick-five/compare/v1.1.1...v1.1.2) (2026-02-07)
+
+
+### Bug Fixes
+
+* accept touches for re-ordering ([#32](https://github.com/gadomski/quick-five/issues/32)) ([db87ead](https://github.com/gadomski/quick-five/commit/db87ead47f70599b9784c19264e0ec68df2bb204))
+
 ## [1.1.1](https://github.com/gadomski/quick-five/compare/v1.1.0...v1.1.1) (2026-02-07)
 
 
