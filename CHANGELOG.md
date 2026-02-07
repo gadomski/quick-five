@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/gadomski/quick-five/compare/v1.1.0...v1.1.1) (2026-02-07)
+
+
+### Bug Fixes
+
+* don't include component in tag ([fbbb169](https://github.com/gadomski/quick-five/commit/fbbb1695ba5ed63bc70185c0d364abb577e7ce4b))
+
 ## [1.1.0](https://github.com/gadomski/quick-five/compare/quick-five-v1.0.1...quick-five-v1.1.0) (2026-02-07)
 
 
