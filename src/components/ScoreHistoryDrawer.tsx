@@ -45,7 +45,7 @@ export function ScoreHistoryDrawer({
         <Drawer.Content maxH="60vh">
           <Drawer.Header borderBottomWidth="1px">
             <Flex justify="space-between" align="center" w="100%">
-              <Drawer.Title>{playerName} - Score History</Drawer.Title>
+              <Drawer.Title>{playerName}'s score history</Drawer.Title>
               <Drawer.CloseTrigger asChild>
                 <CloseButton size="sm" />
               </Drawer.CloseTrigger>
