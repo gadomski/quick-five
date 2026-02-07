@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/gadomski/quick-five/compare/v1.2.0...v1.2.1) (2026-02-07)
+
+
+### Bug Fixes
+
+* update footer text ([ffedb75](https://github.com/gadomski/quick-five/commit/ffedb75ff325ff7ebcd097421ae0633bfa0610f6))
+
 ## [1.2.0](https://github.com/gadomski/quick-five/compare/v1.1.5...v1.2.0) (2026-02-07)
 
 
