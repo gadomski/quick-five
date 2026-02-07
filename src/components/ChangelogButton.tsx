@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Button, type ButtonProps, Dialog, Portal, Box } from "@chakra-ui/react";
+import {
+  Button,
+  type ButtonProps,
+  Dialog,
+  Portal,
+  Box,
+} from "@chakra-ui/react";
 import Markdown from "react-markdown";
 import changelog from "../../CHANGELOG.md?raw";
 
@@ -9,7 +15,7 @@ export function ChangelogButton(props: ButtonProps) {
   return (
     <>
       <Button {...props} variant="plain" onClick={() => setOpen(true)}>
-        Changelog
+        v{__APP_VERSION__} ({__BUILD_DATE__})
       </Button>
 
       <Dialog.Root
@@ -22,9 +28,6 @@ export function ChangelogButton(props: ButtonProps) {
           <Dialog.Backdrop />
           <Dialog.Positioner>
             <Dialog.Content>
-              <Dialog.Header>
-                <Dialog.Title>Changelog</Dialog.Title>
-              </Dialog.Header>
               <Dialog.Body>
                 <Box css={{ "& h2": { mt: 4, mb: 2 }, "& h3": { mt: 2 } }}>
                   <Markdown>{changelog}</Markdown>
