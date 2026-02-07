@@ -7,7 +7,7 @@ import {
   CloseButton,
   Drawer,
 } from "@chakra-ui/react";
-import { FiRotateCcw, FiTrash } from "react-icons/fi";
+import { FiTrash } from "react-icons/fi";
 import { ScoreEntry } from "../types/game";
 
 interface ScoreHistoryDrawerProps {
