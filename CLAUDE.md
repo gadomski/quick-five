@@ -8,6 +8,8 @@ Quick Five is a React + TypeScript mobile scoring app for tracking game scores. 
 
 ## Commands
 
+You'll need to use at least node v22 (e.g. `nvm use 22`).
+
 - `yarn dev` — start Vite dev server
 - `yarn build` — TypeScript check + Vite production build
 - `yarn lint` — TypeScript type check (`tsc --noEmit`)
