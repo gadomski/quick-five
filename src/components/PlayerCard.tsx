@@ -100,7 +100,7 @@ export function PlayerCard({ player }: PlayerCardProps) {
               </HStack>
             </HStack>
           </Card.Title>
-          <Card.Description>
+          <Card.Description as={"div"}>
             <HStack justify={"space-between"}>
               <Text fontSize="xl" fontWeight="semibold">
                 Total: {player.totalScore}
