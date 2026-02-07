@@ -3,7 +3,7 @@ import { CSS } from "@dnd-kit/utilities";
 import {
   DndContext,
   closestCenter,
-  PointerSensor,
+  MouseSensor,
   TouchSensor,
   useSensor,
   useSensors,
@@ -40,7 +40,7 @@ export function PlayerList() {
   const reorderPlayers = useGameStore((state) => state.reorderPlayers);
 
   const sensors = useSensors(
-    useSensor(PointerSensor, {
+    useSensor(MouseSensor, {
       activationConstraint: {
         distance: 8,
       },
