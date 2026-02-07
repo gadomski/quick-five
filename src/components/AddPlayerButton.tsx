@@ -1,17 +1,15 @@
 import { useState } from "react";
 import { Flex, Input, Button } from "@chakra-ui/react";
+import { useGameStore } from "../store/gameStore";
 
-interface AddPlayerButtonProps {
-  onAdd: (name: string) => void;
-}
-
-export function AddPlayerButton({ onAdd }: AddPlayerButtonProps) {
+export function AddPlayerButton() {
   const [isAdding, setIsAdding] = useState(false);
   const [name, setName] = useState("");
+  const addPlayer = useGameStore((state) => state.addPlayer);
 
   const handleSubmit = () => {
     if (name.trim()) {
-      onAdd(name.trim());
+      addPlayer(name.trim());
       setName("");
       setIsAdding(false);
     }
