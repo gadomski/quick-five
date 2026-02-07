@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/gadomski/quick-five/compare/v1.1.3...v1.1.4) (2026-02-07)
+
+
+### Bug Fixes
+
+* use touchAction ([c93f819](https://github.com/gadomski/quick-five/commit/c93f8198e34891c8d36311b2b80c83d4a1725e9c))
+
 ## [1.1.3](https://github.com/gadomski/quick-five/compare/v1.1.2...v1.1.3) (2026-02-07)
 
 
