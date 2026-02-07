@@ -4,6 +4,7 @@ import {
   type ButtonProps,
   Dialog,
   Portal,
+  Prose,
   Box,
 } from "@chakra-ui/react";
 import Markdown from "react-markdown";
@@ -29,9 +30,9 @@ export function ChangelogButton(props: ButtonProps) {
           <Dialog.Positioner>
             <Dialog.Content>
               <Dialog.Body>
-                <Box css={{ "& h2": { mt: 4, mb: 2 }, "& h3": { mt: 2 } }}>
+                <Prose>
                   <Markdown>{changelog}</Markdown>
-                </Box>
+                </Prose>
               </Dialog.Body>
               <Dialog.Footer>
                 <Button variant="outline" onClick={() => setOpen(false)}>
