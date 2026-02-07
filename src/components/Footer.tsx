@@ -8,7 +8,7 @@ export default function Footer() {
         Stealing Luke's job since 2026
       </Text>
       <Text fontSize="xs" color="fg.muted" textAlign="center">
-        Found a bug, or want to request a feature? Open a{" "}
+        Found a bug or have a feature request? Open a{" "}
         <Link
           href="https://github.com/gadomski/quick-five/issues"
           target="_blank"
