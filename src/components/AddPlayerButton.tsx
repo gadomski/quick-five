@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Flex, Input, Button } from "@chakra-ui/react";
+import { Flex, Input, Button, type ButtonProps } from "@chakra-ui/react";
 import { useGameStore } from "../store/gameStore";
 
-export function AddPlayerButton() {
+export function AddPlayerButton(props: ButtonProps) {
   const [isAdding, setIsAdding] = useState(false);
   const [name, setName] = useState("");
   const addPlayer = useGameStore((state) => state.addPlayer);
@@ -26,12 +26,7 @@ export function AddPlayerButton() {
 
   if (!isAdding) {
     return (
-      <Button
-        w="100%"
-        h="44px"
-        variant="outline"
-        onClick={() => setIsAdding(true)}
-      >
+      <Button {...props} onClick={() => setIsAdding(true)}>
         + Add Player
       </Button>
     );
