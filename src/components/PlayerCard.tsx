@@ -6,6 +6,8 @@ import {
   Input,
   IconButton,
   useDisclosure,
+  Card,
+  HStack,
 } from "@chakra-ui/react";
 import { FiList, FiX } from "react-icons/fi";
 import { Player } from "../types/game";
@@ -57,57 +59,70 @@ export function PlayerCard({
 
   return (
     <>
-      <Box borderWidth="1px" borderRadius="lg" p={4} bg="bg.muted">
-        <Flex justify="space-between" align="center" mb={2}>
-          {isEditingName ? (
-            <Input
-              value={editedName}
-              onChange={(e) => setEditedName(e.target.value)}
-              onBlur={handleNameSubmit}
-              onKeyDown={handleNameKeyDown}
-              size="lg"
-              fontWeight="bold"
-              autoFocus
-              maxW="200px"
-            />
-          ) : (
-            <Text
-              fontSize="xl"
-              fontWeight="bold"
-              cursor="pointer"
-              onClick={() => setIsEditingName(true)}
-              _hover={{ textDecoration: "underline" }}
-            >
-              {player.name}
-            </Text>
-          )}
-          <Flex gap={2}>
-            <IconButton
-              aria-label="View score history"
-              size="sm"
-              variant="ghost"
-              onClick={onOpen}
-            >
-              <FiList />
-            </IconButton>
-            <IconButton
-              aria-label="Remove player"
-              size="sm"
-              variant="ghost"
-              colorPalette="red"
-              onClick={onConfirmOpen}
-            >
-              <FiX />
-            </IconButton>
-          </Flex>
-        </Flex>
-
-        <Text fontSize="2xl" fontWeight="semibold" mb={4}>
-          Total: {player.totalScore}
-        </Text>
-
-        <AddScoreInput onSubmit={onAddScore} />
-      </Box>
+      <Card.Root size={"sm"}>
+        <Card.Body>
+          <Card.Title mb={2}>
+            <HStack justify="space-between" align="center">
+              {isEditingName ? (
+                <Input
+                  value={editedName}
+                  onChange={(e) => setEditedName(e.target.value)}
+                  onBlur={handleNameSubmit}
+                  onKeyDown={handleNameKeyDown}
+                  size="lg"
+                  fontWeight="bold"
+                  autoFocus
+                  maxW="200px"
+                />
+              ) : (
+                <Text
+                  fontSize="xl"
+                  fontWeight="bold"
+                  cursor="pointer"
+                  onClick={() => setIsEditingName(true)}
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  {player.name}
+                </Text>
+              )}
+              <HStack gap={2}>
+                <IconButton
+                  aria-label="View score history"
+                  size="sm"
+                  variant="ghost"
+                  onClick={onOpen}
+                >
+                  <FiList />
+                </IconButton>
+                <IconButton
+                  aria-label="Remove player"
+                  size="sm"
+                  variant="ghost"
+                  colorPalette="red"
+                  onClick={onConfirmOpen}
+                >
+                  <FiX />
+                </IconButton>
+              </HStack>
+            </HStack>
+          </Card.Title>
+          <Card.Description>
+            <HStack justify={"space-between"}>
+              <Text fontSize="xl" fontWeight="semibold">
+                Total: {player.totalScore}
+              </Text>
+              {player.history.length > 0 && (
+                <Text>
+                  Last score: {player.history[player.history.length - 1].amount}
+                </Text>
+              )}
+            </HStack>
+          </Card.Description>
+        </Card.Body>
+        <Card.Footer>
+          <AddScoreInput onSubmit={onAddScore} />
+        </Card.Footer>
+      </Card.Root>
 
       <ScoreHistoryDrawer
         isOpen={open}
