@@ -5,6 +5,7 @@ import {
   Image,
   IconButton,
   useDisclosure,
+  HStack,
 } from "@chakra-ui/react";
 import { useTheme } from "next-themes";
 import { LuMoon, LuSun } from "react-icons/lu";
@@ -24,12 +25,12 @@ export function GameHeader({ onReset }: GameHeaderProps) {
 
   return (
     <>
-      <Flex justify="space-between" align="center">
-        <Flex align="center" gap={3}>
+      <HStack justify="space-between" align="center">
+        <HStack align="center" gap={3}>
           <Image src="icon-192.png" alt="Quick Five" boxSize="40px" />
           <Heading size="xl">Quick Five</Heading>
-        </Flex>
-        <Flex gap={2}>
+        </HStack>
+        <HStack gap={2}>
           <IconButton
             aria-label="Toggle color mode"
             variant="ghost"
@@ -39,18 +40,18 @@ export function GameHeader({ onReset }: GameHeaderProps) {
             {theme === "dark" ? <LuSun /> : <LuMoon />}
           </IconButton>
           <Button size="sm" variant="outline" onClick={onOpen}>
-            New Game
+            New game
           </Button>
-        </Flex>
-      </Flex>
+        </HStack>
+      </HStack>
 
       <ConfirmDialog
         isOpen={open}
         onClose={onClose}
         onConfirm={onReset}
-        title="New Game"
+        title="New game"
         message="Are you sure you want to start a new game? All scores will be lost."
-        confirmText="Start New Game"
+        confirmText="Start new name"
       />
     </>
   );
