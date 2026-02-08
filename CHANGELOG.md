@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/gadomski/quick-five/compare/v1.2.1...v1.3.0) (2026-02-08)
+
+
+### Features
+
+* add quick pigs ([#48](https://github.com/gadomski/quick-five/issues/48)) ([ebeb9cb](https://github.com/gadomski/quick-five/commit/ebeb9cb2065be37c4fac14c4ab40f2796e5a44c0))
+
+
+### Bug Fixes
+
+* hide leaderboard button when adding player ([#47](https://github.com/gadomski/quick-five/issues/47)) ([b2c2b57](https://github.com/gadomski/quick-five/commit/b2c2b57fe8b23413cd3afe52f57074d59f775a72))
+* use prose for changelog ([#45](https://github.com/gadomski/quick-five/issues/45)) ([badc3bd](https://github.com/gadomski/quick-five/commit/badc3bd95ea9f22320c6dfb86f4be2f3d1d95bc6))
+
 ## [1.2.1](https://github.com/gadomski/quick-five/compare/v1.2.0...v1.2.1) (2026-02-07)
 
 
