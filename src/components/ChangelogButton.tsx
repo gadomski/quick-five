@@ -9,7 +9,7 @@ export function ChangelogButton(props: ButtonProps) {
 
   return (
     <>
-      <Button {...props} variant="plain" onClick={() => setOpen(true)}>
+      <Button {...props} onClick={() => setOpen(true)}>
         v{__APP_VERSION__} ({__BUILD_DATE__})
       </Button>
 

@@ -1,9 +1,24 @@
-import { Link, Stack, Text } from "@chakra-ui/react";
+import { Button, Link, Stack, Text } from "@chakra-ui/react";
 import { ChangelogButton } from "./ChangelogButton";
+import { useGameStore } from "../store/gameStore";
 
 export default function Footer() {
+  const mode = useGameStore((store) => store.mode);
+  const setMode = useGameStore((store) => store.setMode);
+
   return (
     <Stack align="center">
+      <Button
+        color="fg.muted"
+        size="sm"
+        variant={"plain"}
+        onClick={() =>
+          mode === "quick-five" ? setMode("quick-pigs") : setMode("quick-five")
+        }
+      >
+        Switch to {mode === "quick-five" ? "pigs" : "dice"}
+      </Button>
+
       <Text fontSize="xs" color="fg.muted" textAlign="center">
         Stealing Luke's job since 2026
       </Text>
@@ -17,7 +32,7 @@ export default function Footer() {
         </Link>
         .
       </Text>
-      <ChangelogButton fontSize="xs" color="fg.muted" />
+      <ChangelogButton fontSize="xs" color="fg.muted" variant={"plain"} />
     </Stack>
   );
 }

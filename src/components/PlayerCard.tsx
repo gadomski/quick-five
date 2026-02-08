@@ -32,6 +32,7 @@ export function PlayerCard({ player }: PlayerCardProps) {
   const updatePlayerName = useGameStore((state) => state.updatePlayerName);
   const addScore = useGameStore((state) => state.addScore);
   const removeScore = useGameStore((state) => state.removeScore);
+  const clearScores = useGameStore((state) => state.clearScores);
 
   const handleNameSubmit = () => {
     if (editedName.trim()) {
@@ -114,7 +115,10 @@ export function PlayerCard({ player }: PlayerCardProps) {
           </Card.Description>
         </Card.Body>
         <Card.Footer>
-          <AddScoreInput onSubmit={(amount) => addScore(player.id, amount)} />
+          <AddScoreInput
+            onSubmit={(amount) => addScore(player.id, amount)}
+            onClearScores={() => clearScores(player.id)}
+          />
         </Card.Footer>
       </Card.Root>
 

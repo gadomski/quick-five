@@ -3,6 +3,8 @@ import { persist } from "zustand/middleware";
 import { arrayMove } from "@dnd-kit/sortable";
 import { Player, ScoreEntry } from "../types/game";
 
+type GameMode = "quick-five" | "quick-pigs";
+
 function generateId(): string {
   return Math.random().toString(36).substring(2, 9);
 }
@@ -31,8 +33,11 @@ interface GameStore {
   updatePlayerName: (playerId: string, name: string) => void;
   addScore: (playerId: string, amount: number) => void;
   removeScore: (playerId: string, scoreId: string) => void;
+  clearScores: (playerId: string) => void;
   reorderPlayers: (activeId: string, overId: string) => void;
   resetGame: () => void;
+  mode: GameMode;
+  setMode: (mode: GameMode) => void;
 }
 
 export const useGameStore = create<GameStore>()(
@@ -84,6 +89,18 @@ export const useGameStore = create<GameStore>()(
           }),
         })),
 
+      clearScores: (playerId) =>
+        set((state) => ({
+          players: state.players.map((p) => {
+            if (p.id !== playerId) return p;
+            return {
+              ...p,
+              totalScore: 0,
+              history: [],
+            };
+          }),
+        })),
+
       reorderPlayers: (activeId, overId) =>
         set((state) => {
           const oldIndex = state.players.findIndex((p) => p.id === activeId);
@@ -95,6 +112,8 @@ export const useGameStore = create<GameStore>()(
         set({
           players: [createPlayer("Player 1"), createPlayer("Player 2")],
         }),
+      mode: "quick-five",
+      setMode: (mode) => set({ mode }),
     }),
     {
       name: "quick-five-game",
