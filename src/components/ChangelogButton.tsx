@@ -1,11 +1,6 @@
 import { useState } from "react";
-import {
-  Button,
-  type ButtonProps,
-  Dialog,
-  Portal,
-  Box,
-} from "@chakra-ui/react";
+import { Button, type ButtonProps, Dialog, Portal } from "@chakra-ui/react";
+import { Prose } from "./ui/prose";
 import Markdown from "react-markdown";
 import changelog from "../../CHANGELOG.md?raw";
 
@@ -29,9 +24,9 @@ export function ChangelogButton(props: ButtonProps) {
           <Dialog.Positioner>
             <Dialog.Content>
               <Dialog.Body>
-                <Box css={{ "& h2": { mt: 4, mb: 2 }, "& h3": { mt: 2 } }}>
+                <Prose size={"md"}>
                   <Markdown>{changelog}</Markdown>
-                </Box>
+                </Prose>
               </Dialog.Body>
               <Dialog.Footer>
                 <Button variant="outline" onClick={() => setOpen(false)}>
