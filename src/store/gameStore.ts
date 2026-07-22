@@ -35,6 +35,7 @@ interface GameStore {
   removeScore: (playerId: string, scoreId: string) => void;
   clearScores: (playerId: string) => void;
   reorderPlayers: (activeId: string, overId: string) => void;
+  resetScores: () => void;
   resetGame: () => void;
   mode: GameMode;
   setMode: (mode: GameMode) => void;
