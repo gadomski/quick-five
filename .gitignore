@@ -60,3 +60,4 @@ google-services.json
 # vite-plugin-pwa dev artifacts
 dev-dist
 
+.yarn
