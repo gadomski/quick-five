@@ -5,13 +5,14 @@ import {
   useDisclosure,
   HStack,
 } from "@chakra-ui/react";
-import { ConfirmDialog } from "./ConfirmDialog";
+import { ConfirmResetDialog } from "./ConfirmResetDialog";
 import { useGameStore } from "../store/gameStore";
 import { ColorModeButton } from "./ui/color-mode";
 
 export default function GameHeader() {
   const { open, onOpen, onClose } = useDisclosure();
   const mode = useGameStore((state) => state.mode);
+  const resetGame = useGameStore((state) => state.resetGame);
   const resetScores = useGameStore((state) => state.resetScores);
 
   const image =
@@ -19,7 +20,7 @@ export default function GameHeader() {
       <Image src="icon-192.png" alt="Quick Five" boxSize="40px" />
     ) : (
       <Image
-        src="quick-pigs/pigs-icon-192.png"
+          src="quick-pigs/pigs-icon-192.png"
         alt="Quick Pigs"
         boxSize="40px"
       />
@@ -36,18 +37,20 @@ export default function GameHeader() {
         <HStack gap={2}>
           <ColorModeButton />
           <Button size="sm" variant="outline" onClick={onOpen}>
-            New Game
+            New game
           </Button>
         </HStack>
       </HStack>
 
-      <ConfirmDialog
+      <ConfirmResetDialog
         isOpen={open}
         onClose={onClose}
-        onConfirm={resetScores}
+        onConfirmOne={resetGame}
+        onConfirmTwo={resetScores}
         title="New game"
-        message="Are you sure you want to start a new game? All scores will be lost."
-        confirmText="New Game"
+        message="Reset Players or Scores, data will be lost. Choose one!"
+        confirmOneText="Clear Players"
+        confirmTwoText="Clear Scores"
       />
     </>
   );
