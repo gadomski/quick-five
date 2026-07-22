@@ -20,7 +20,7 @@ export default function GameHeader() {
       <Image src="icon-192.png" alt="Quick Five" boxSize="40px" />
     ) : (
       <Image
-          src="quick-pigs/pigs-icon-192.png"
+        src="quick-pigs/pigs-icon-192.png"
         alt="Quick Pigs"
         boxSize="40px"
       />

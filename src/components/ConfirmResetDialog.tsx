@@ -36,7 +36,6 @@ export function ConfirmResetDialog({
     onClose();
   };
 
-
   return (
     <Dialog.Root
       open={isOpen}
