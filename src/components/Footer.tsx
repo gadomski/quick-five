@@ -3,14 +3,12 @@ import { ChangelogButton } from "./ChangelogButton";
 import { useGameStore } from "../store/gameStore";
 import { ConfirmDialog } from "./ConfirmDialog";
 
-
 export default function Footer() {
   const { open, onOpen, onClose } = useDisclosure();
-  
+
   const mode = useGameStore((store) => store.mode);
   const setMode = useGameStore((store) => store.setMode);
   const resetGame = useGameStore((state) => state.resetGame);
-
 
   return (
     <Stack align="center">
@@ -39,7 +37,7 @@ export default function Footer() {
         .
       </Text>
       <ChangelogButton fontSize="xs" color="fg.muted" variant={"plain"} />
-      
+
       <Button size="sm" variant="outline" onClick={onOpen}>
         Clear players
       </Button>
