@@ -107,7 +107,16 @@ export const useGameStore = create<GameStore>()(
           const newIndex = state.players.findIndex((p) => p.id === overId);
           return { players: arrayMove(state.players, oldIndex, newIndex) };
         }),
-
+      resetScores: () =>
+        set((state) => ({
+          players: state.players.map((p) => {
+            return {
+              ...p,
+              totalScore: 0,
+              history: [],
+            };
+          }),
+        })),
       resetGame: () =>
         set({
           players: [createPlayer("Player 1"), createPlayer("Player 2")],

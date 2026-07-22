@@ -12,7 +12,7 @@ import { ColorModeButton } from "./ui/color-mode";
 export default function GameHeader() {
   const { open, onOpen, onClose } = useDisclosure();
   const mode = useGameStore((state) => state.mode);
-  const resetGame = useGameStore((state) => state.resetGame);
+  const resetScores = useGameStore((state) => state.resetScores);
 
   const image =
     mode === "quick-five" ? (
@@ -36,7 +36,7 @@ export default function GameHeader() {
         <HStack gap={2}>
           <ColorModeButton />
           <Button size="sm" variant="outline" onClick={onOpen}>
-            New game
+            New Game
           </Button>
         </HStack>
       </HStack>
@@ -44,10 +44,10 @@ export default function GameHeader() {
       <ConfirmDialog
         isOpen={open}
         onClose={onClose}
-        onConfirm={resetGame}
+        onConfirm={resetScores}
         title="New game"
         message="Are you sure you want to start a new game? All scores will be lost."
-        confirmText="Start new name"
+        confirmText="New Game"
       />
     </>
   );
