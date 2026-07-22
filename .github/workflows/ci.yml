@@ -10,12 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Enable corepack
+        run: corepack enable
       - uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: "yarn"
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
       - name: Check format
         run: yarn format:check
       - name: Lint
