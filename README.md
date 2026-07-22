@@ -10,6 +10,9 @@ Taking Luke's job since 2026.
 ## Objective
 Be the player with the highest score after the final round, which is triggered when someone reaches or exceeds **5,000 points**.
 
+> [!TIP]
+> 5,000 points is the most common total, but you can play to any number!
+
 ---
 
 ## Point Values
