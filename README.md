@@ -30,7 +30,7 @@ Note: You must roll the Three-of-a-Kind in a single roll, they cannot be part of
 
 ## How to Play
 
-1. **Rolling:** Start your turn by rolling all **5 dice**.
+1. **Rolling:** Start your turn by rolling all **5 dice**, unless you were passed dice (see step 3)
 2. **Keeping Points:** You **must** set aside at least **one scoring die** (or scoring combination) per roll to keep your points.
 3. **Deciding to Continue or Stop:**
    - **Bank Your Points:** Stop your turn, add your points to your total, and pass all 5 dice to the next player.
