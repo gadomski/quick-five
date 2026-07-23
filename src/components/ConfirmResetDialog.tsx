@@ -1,38 +1,28 @@
 import { useRef } from "react";
 import { Button, Dialog, Portal } from "@chakra-ui/react";
+import { LuTrash, LuUndo } from "react-icons/lu";
+import { useGameStore } from "../store/gameStore";
 
 interface ConfirmResetDialogProps {
   isOpen: boolean;
   onClose: () => void;
-  onConfirmOne: () => void;
-  onConfirmTwo: () => void;
-  title: string;
-  message: string;
-  confirmOneText?: string;
-  confirmTwoText?: string;
-  cancelText?: string;
 }
 
 export function ConfirmResetDialog({
   isOpen,
   onClose,
-  onConfirmOne,
-  onConfirmTwo,
-  title,
-  message,
-  confirmOneText = "Confirm One",
-  confirmTwoText = "Confirm Two",
-  cancelText = "Cancel",
 }: ConfirmResetDialogProps) {
   const cancelRef = useRef<HTMLButtonElement>(null);
+  const resetScores = useGameStore((state) => state.resetScores);
+  const resetGame = useGameStore((state) => state.resetGame);
 
-  const handleConfirmOne = () => {
-    onConfirmOne();
+  const handleResetScores = () => {
+    resetScores();
     onClose();
   };
 
-  const handleConfirmTwo = () => {
-    onConfirmTwo();
+  const handleResetGame = () => {
+    resetGame();
     onClose();
   };
 
@@ -47,18 +37,21 @@ export function ConfirmResetDialog({
         <Dialog.Positioner>
           <Dialog.Content>
             <Dialog.Header>
-              <Dialog.Title>{title}</Dialog.Title>
+              <Dialog.Title>New game</Dialog.Title>
             </Dialog.Header>
-            <Dialog.Body>{message}</Dialog.Body>
+            <Dialog.Body>
+              Reset scores keeps the current players, reset game loses
+              everything
+            </Dialog.Body>
             <Dialog.Footer>
               <Button ref={cancelRef} variant="outline" onClick={onClose}>
-                {cancelText}
+                Cancel
               </Button>
-              <Button colorPalette="red" onClick={handleConfirmOne} ml={3}>
-                {confirmOneText}
+              <Button onClick={handleResetScores} ml={3}>
+                <LuUndo /> Reset scores
               </Button>
-              <Button colorPalette="red" onClick={handleConfirmTwo} ml={3}>
-                {confirmTwoText}
+              <Button onClick={handleResetGame} ml={3}>
+                <LuTrash /> Reset game
               </Button>
             </Dialog.Footer>
           </Dialog.Content>
