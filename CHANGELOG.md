@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/gadomski/quick-five/compare/v1.3.0...v1.4.0) (2026-07-23)
+
+
+### Features
+
+* add some rules to follow, if you want, I'm not your boss ([#66](https://github.com/gadomski/quick-five/issues/66)) ([22cc357](https://github.com/gadomski/quick-five/commit/22cc35772077482279bba024a7df36285f3dde62))
+
+
+### Bug Fixes
+
+* allows score clearing without removing player name ([#65](https://github.com/gadomski/quick-five/issues/65)) ([6443197](https://github.com/gadomski/quick-five/commit/64431971bf35cbf61531413e433274fa45f836d5))
+
 ## [1.3.0](https://github.com/gadomski/quick-five/compare/v1.2.1...v1.3.0) (2026-02-08)
 
 
