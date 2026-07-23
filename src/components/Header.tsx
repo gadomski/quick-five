@@ -5,14 +5,13 @@ import {
   useDisclosure,
   HStack,
 } from "@chakra-ui/react";
-import { ConfirmDialog } from "./ConfirmDialog";
-import { useGameStore } from "../store/gameStore";
+import { ConfirmResetDialog } from "./ConfirmResetDialog";
 import { ColorModeButton } from "./ui/color-mode";
+import { useGameStore } from "../store/gameStore";
 
 export default function GameHeader() {
   const { open, onOpen, onClose } = useDisclosure();
   const mode = useGameStore((state) => state.mode);
-  const resetGame = useGameStore((state) => state.resetGame);
 
   const image =
     mode === "quick-five" ? (
@@ -41,14 +40,7 @@ export default function GameHeader() {
         </HStack>
       </HStack>
 
-      <ConfirmDialog
-        isOpen={open}
-        onClose={onClose}
-        onConfirm={resetGame}
-        title="New game"
-        message="Are you sure you want to start a new game? All scores will be lost."
-        confirmText="Start new name"
-      />
+      <ConfirmResetDialog isOpen={open} onClose={onClose} />
     </>
   );
 }

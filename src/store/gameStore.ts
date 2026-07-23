@@ -35,6 +35,7 @@ interface GameStore {
   removeScore: (playerId: string, scoreId: string) => void;
   clearScores: (playerId: string) => void;
   reorderPlayers: (activeId: string, overId: string) => void;
+  resetScores: () => void;
   resetGame: () => void;
   mode: GameMode;
   setMode: (mode: GameMode) => void;
@@ -107,7 +108,16 @@ export const useGameStore = create<GameStore>()(
           const newIndex = state.players.findIndex((p) => p.id === overId);
           return { players: arrayMove(state.players, oldIndex, newIndex) };
         }),
-
+      resetScores: () =>
+        set((state) => ({
+          players: state.players.map((p) => {
+            return {
+              ...p,
+              totalScore: 0,
+              history: [],
+            };
+          }),
+        })),
       resetGame: () =>
         set({
           players: [createPlayer("Player 1"), createPlayer("Player 2")],
